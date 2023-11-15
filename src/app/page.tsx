@@ -1,8 +1,18 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-gray-900 text-center p-4">
+      <div className="mb-8">
+        <Image
+          alt="Logo"
+          className="rounded-full"
+          height="100"
+          src="/logo.png"
+          width="100"
+        />
+      </div>
       <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200">
         Welcome to Cassoware!
       </h1>
