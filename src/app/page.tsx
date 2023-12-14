@@ -1,4 +1,4 @@
-import Demo from "@/components/demo";
+import { Rocket } from "@/components/animation/rocket";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -23,7 +23,7 @@ export default function Home() {
       <div className="mt-8">
         <Button variant="outline">Notify Me</Button>
       </div>
-      <Demo />
+      <Rocket />
     </section>
   );
 }
