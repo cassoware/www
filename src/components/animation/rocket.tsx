@@ -11,7 +11,7 @@ export const Rocket = () => {
     x: [-5, 5, -5],
     transition: {
       y: {
-        duration: 4,
+        duration: 3,
         ease: "easeIn",
       },
       x: {
@@ -25,13 +25,15 @@ export const Rocket = () => {
     <motion.div
       initial={{ y: "-100vh" }} // Start position
       animate={shakeAnimation} // End position (off the bottom of the screen)
+      className="flex flex-col justify-center"
     >
       <Image
         src={RocketSvg}
         alt="Rocket Svg"
         style={{ rotate: "-45deg", scale: "200%" }} // cant use tailwind for this
       />
-      <Line />
+      {/* How tf do I make this work lmao */}
+      {/* <Line /> */}
     </motion.div>
   );
 };

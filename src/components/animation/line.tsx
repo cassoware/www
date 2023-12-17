@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 export const Line = () => {
   return (
     <motion.div
+      className="top-10"
       animate={{ height: ["20%", "50%", "20%"] }}
       transition={{ duration: 0.5, ease: "easeOut", repeat: Infinity }}
       style={{
