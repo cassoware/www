@@ -15,9 +15,9 @@ export default function Home() {
       <Rocket />
       {circleDelays.map(([delay, color]: delayColorPair, idx) => (
         <ExpandingCircle key={delay} delay={delay} color={color}>
-          {idx == circleDelays.length - 1
-            ? "Figure out how to make this stay still"
-            : null}
+          {idx == circleDelays.length - 1 ? (
+            <h1>How do I make this shit stay still</h1>
+          ) : null}
         </ExpandingCircle>
       ))}
     </section>

@@ -35,21 +35,22 @@ export const ExpandingCircle = ({
     return () => clearTimeout(timer);
   }, [delay]);
 
-  useEffect(() => {
-    let scale = 0;
-    let scaleRate = 0.2;
-    const scaleUp = () => {
-      scale += scaleRate;
-      controls.start({ scale: scale });
-
-      // Continuously call this function to keep scaling
-      requestAnimationFrame(scaleUp);
-    };
-
-    if (isVisible) scaleUp();
-
-    return () => cancelAnimationFrame(0);
-  }, [controls, isVisible]);
+  // THIS IS INCONSISTENT
+  // useEffect(() => {
+  //   let scale = 0;
+  //   let scaleRate = 0.2;
+  //   const scaleUp = () => {
+  //     scale += scaleRate;
+  //     controls.start({ scale: scale });
+  //
+  //     // Continuously call this function to keep scaling
+  //     requestAnimationFrame(scaleUp);
+  //   };
+  //
+  //   if (isVisible) scaleUp();
+  //
+  //   return () => cancelAnimationFrame(0);
+  // }, [controls, isVisible]);
 
   if (!isVisible) {
     return null; // Or return a placeholder/loading component
@@ -58,13 +59,19 @@ export const ExpandingCircle = ({
   return (
     <motion.div
       initial={{ scale: 0 }}
-      animate={controls}
+      animate={{ scale: 25 }} // 25 is arbitrary: how  can I make it cover entire viewport?
+      transition={{ duration: 2, ease: "easeInOut" }}
       className={`${colorVariants[color]} absolute z-[-1] w-24 h-24 bottom-0 transform
       left-1/2-w/2 mb-0 rounded-full flex overflow-hidden justify-center items-center`} // initial styles with Tailwind
       layout
     >
       {/* figure out how to make this not scale with circlr */}
-      <motion.div layout="position" className="absolute h-1/2 w-1/2">
+      <motion.div
+        initial={{ scale: 1 }}
+        animate={{ scale: 1 / 25 }}
+        transition={{ duration: 2, ease: "easeInOut" }}
+        className="absolute h-1/2 w-1/2"
+      >
         {children}
       </motion.div>
     </motion.div>

@@ -1,17 +1,18 @@
 "use client";
 import { motion } from "framer-motion";
-export const Line = () => {
+export const Line = ({ delay }: { delay: number }) => {
   return (
     <motion.div
-      className="top-10"
-      animate={{ height: ["20%", "50%", "20%"] }}
-      transition={{ duration: 0.5, ease: "easeOut", repeat: Infinity }}
-      style={{
-        height: "2px",
-        width: "2px",
-        backgroundColor: "black",
-        margin: "2px 0",
+      animate={{
+        height: [0, 50, 50, 50],
+        opacity: [1, 1, 1, 0],
       }}
+      transition={{
+        delay: -1 * delay, // -1 creates an offset
+        duration: 0.75, // sweet spot
+        repeat: Infinity,
+      }}
+      className="bg-black w-0.5 margin-auto"
     />
   );
 };
