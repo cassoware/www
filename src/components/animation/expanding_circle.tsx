@@ -56,10 +56,11 @@ export const ExpandingCircle = ({
     return null; // Or return a placeholder/loading component
   }
 
+  const FINAL_H_W = Math.sqrt((100 / 2) ** 2 + (100 / 2) ** 2) * 2;
   return (
     <motion.div
-      initial={{ scale: 0 }}
-      animate={{ scale: 25 }} // 25 is arbitrary: how  can I make it cover entire viewport?
+      initial={{ height: 0, width: 0, y: 0 }}
+      animate={{ height: `${FINAL_H_W}%`, width: `${FINAL_H_W}%` }} // 25 is arbitrary: how  can I make it cover entire viewport?
       transition={{ duration: 2, ease: "easeInOut" }}
       className={`${colorVariants[color]} absolute z-[-1] w-24 h-24 bottom-0 transform
       left-1/2-w/2 mb-0 rounded-full flex overflow-hidden justify-center items-center`} // initial styles with Tailwind

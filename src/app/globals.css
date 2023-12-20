@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-familiy: "quicksand";
+  src: url("/src/assets/fonts/Quicksand_Bold.otf") format("truetype");
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

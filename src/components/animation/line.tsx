@@ -12,7 +12,7 @@ export const Line = ({ delay }: { delay: number }) => {
         duration: 0.75, // sweet spot
         repeat: Infinity,
       }}
-      className="bg-black w-0.5 margin-auto"
+      className="bg-yellow-300 w-0.5 margin-auto"
     />
   );
 };

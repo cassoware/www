@@ -68,6 +68,7 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
+        quicksand: ["Quicksand", ...fontFamily.sans],
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
     },
