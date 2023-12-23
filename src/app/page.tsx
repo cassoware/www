@@ -1,6 +1,9 @@
 // import { ExpandingCircle } from "@/components/animation/expanding_circle";
+import { InView } from "react-intersection-observer";
 import { Rocket } from "@/components/animation/rocket";
+import { Stars } from "@/components/animation/stars";
 import { WelcomeTitle } from "@/components/ui/welcome_title";
+import { FadeIn } from "@/components/ui/fade_in";
 
 // type delayColorPair = [number, string];
 
@@ -12,16 +15,20 @@ import { WelcomeTitle } from "@/components/ui/welcome_title";
 
 export default function Home() {
   return (
-    <section className="dark:text-white relative z-[-2] flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-gray-900 text-center p-4">
-      <Rocket />
-      {/* {circleDelays.map(([delay, color]: delayColorPair, idx) => ( */}
-      {/*   <ExpandingCircle key={delay} delay={delay} color={color}> */}
-      {/*     {idx == circleDelays.length - 1 ? ( */}
-      {/*       <h1>How do I make this shit stay still</h1> */}
-      {/*     ) : null} */}
-      {/*   </ExpandingCircle> */}
-      {/* ))} */}
-      <WelcomeTitle />
-    </section>
+    <div className="dark:bg-gray-900 dark:text-white z-[-2] flex flex-col items-center justify-center">
+      <div className="absolute">
+        <Rocket />
+        {/* <Stars></Stars> */}
+      </div>
+      <section className="flex flex-col items-center justify-center h-screen w-screen text-center p-4">
+        <div className="top-0"></div>
+        <WelcomeTitle />
+      </section>
+      <section className="flex h-screen w-screen justify-center">
+        <div className="h-min">
+          <FadeIn>Test</FadeIn>
+        </div>
+      </section>
+    </div>
   );
 }

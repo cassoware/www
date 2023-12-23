@@ -8,20 +8,20 @@ import { Line } from "./line";
 const VELOCITY_LINES_COUNT = 5;
 
 export const Rocket = () => {
-  const shakeAnimation = {
-    y: ["50vh", "-100vh"],
-    transition: {
-      y: {
-        duration: 3,
-        ease: "easeIn",
-      },
-    },
-  };
+  // const shakeAnimation = ;
   return (
     <motion.div
       initial={{ y: "-100vh" }} // Start position
-      animate={shakeAnimation} // End position (off the bottom of the screen)
-      className="flex flex-col justify-center space-y-10"
+      animate={{
+        y: ["10vh", "-110vh"],
+        transition: {
+          y: {
+            duration: 2,
+            ease: "easeIn",
+          },
+        },
+      }} // End position (off the bottom of the screen)
+      className="w-10 flex flex-col justify-center space-y-10"
     >
       <Image
         src={RocketSvg}
