@@ -26,7 +26,9 @@ export default function Home() {
       </section>
       <section className="flex h-screen w-screen justify-center">
         <div className="h-min">
-          <FadeIn>Test</FadeIn>
+          <FadeIn>
+            <p className="text-center">Your wish is our command</p>
+          </FadeIn>
         </div>
       </section>
     </div>

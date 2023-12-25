@@ -3,14 +3,14 @@ import { InView } from "react-intersection-observer";
 
 export const FadeIn = ({ children }: { children: React.ReactNode }) => {
   return (
-    <InView threshold={1} rootMargin="-10% 0px">
+    <InView threshold={0} rootMargin="-20% 0px">
       {({ inView, ref, entry }) => (
         <div
           ref={ref}
           className={
             inView
-              ? "transition-all flex w-screen justify-center opacity-100 duration-1000"
-              : "transition-all flex w-screen justify-center duration-1000 opacity-0"
+              ? "transition-all w-screen duration-1000 opacity-100 ease-in-out"
+              : "transition-all w-screen -translate-x-1/2 duration-1000 opacity-30 ease-in-out"
           }
         >
           {children}
