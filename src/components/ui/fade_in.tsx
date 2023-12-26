@@ -10,7 +10,7 @@ export const FadeIn = ({ children }: { children: React.ReactNode }) => {
           className={
             inView
               ? "transition-all w-screen duration-1000 opacity-100 ease-in-out"
-              : "transition-all w-screen -translate-x-1/2 duration-1000 opacity-30 ease-in-out"
+              : "transition-all w-screen -translate-x-1/2 duration-1000 opacity-0 ease-in-out"
           }
         >
           {children}
