@@ -11,9 +11,8 @@ export const Rocket = () => {
   // const shakeAnimation = ;
   return (
     <motion.div
-      initial={{ y: "-100vh" }} // Start position
       animate={{
-        y: ["10vh", "-110vh"],
+        y: ["50vh", "-100vh"],
         transition: {
           y: {
             duration: 2,
