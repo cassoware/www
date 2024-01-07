@@ -10,15 +10,15 @@ export const WelcomeTitle = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <h1
+    <div
       className={`transition-opacity delay-500 duration-1000 scale-150 ease-in ${
         isLoaded ? "opacity-100" : "opacity-0"
       }`}
     >
       <h1>
-        That's <b>your business</b> with
+        That is <b>your business</b> with
       </h1>
       <h1 className={"font-quicksand text-white"}>CASSOWARE</h1>
-    </h1>
+    </div>
   );
 };
